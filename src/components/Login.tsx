@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 
@@ -72,8 +72,8 @@ const Login = () => {
                         </div>
                         {
                             isSignInForm || <div>
-                                <Field type='text' name='confirmPassword' placeholder='Confirm Password' className='bg-gray-700 w-full p-2 rounded-sm'/>
-                            <ErrorMessage name='confirmPassword' component='div' />
+                                <Field type='text' name='confirmPassword' placeholder='Confirm Password' className='bg-gray-700 w-full p-2 rounded-sm' />
+                                <ErrorMessage name='confirmPassword' component='div' />
 
                             </div>
                         }
