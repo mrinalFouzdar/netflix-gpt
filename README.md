@@ -3,6 +3,15 @@
 - create react app
 - install Typescript and config
 - Gonfigured TailwindCSS
+- Header 
+- Routing of App
+- Login Form 
+- Sign up Form
+- Form Validation using formix and yup
+- Firebase Setup
+- Deploying our app to Production
+- Create SignUp User Account
+
 
 
 # Features
