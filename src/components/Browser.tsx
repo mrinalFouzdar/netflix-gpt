@@ -1,9 +1,16 @@
-import React from 'react'
+import useNowNowPlay from '../hooks/useNowPlay'
+import Header from './Header'
+import MainContainer from './MainContainer'
+import SecondaryContatiner from './SecondaryContatiner'
 
 const Browser = () => {
+
+  useNowNowPlay()
   return (
     <div>
-      Browser
+      <Header />
+      <MainContainer/>
+      <SecondaryContatiner/>
     </div>
   )
 }

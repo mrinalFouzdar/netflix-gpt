@@ -1,21 +1,19 @@
-import React, { useState } from 'react'
+import React, {  useState } from 'react'
 import Header from './Header'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { checkValidateData } from '../utils/validate'
-
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../utils/firebase';
-
-type FormValues = {
-    email: string
-    password: string
-    confirmPassword?: string
-}
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
+import { FormValues } from '../utils/types';
+import {USER_AVATAR  } from '../utils/constants';
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true)
     // const {resetForm} = useFormikContext()
     const [errorMessage, setErrorMessage] = useState('')
+    const dispacth = useDispatch()
 
     const { validationSchema } = checkValidateData(isSignInForm)
 
@@ -36,12 +34,6 @@ const Login = () => {
     }
 
     const initialValues: FormValues = getInitialValue(isSignInForm)
-    // const initialValues = useCallback(() => {
-    //     getInitialValue(isSignInForm)
-    // }, [isSignInForm])
-
-    console.log(isSignInForm)
-    console.log(initialValues)
 
     const toggleSignInForm = (values: any) => {
 
@@ -57,7 +49,18 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user)
+                // console.log(user)
+                updateProfile(user, {
+                    displayName: "Mrianl", photoURL  : USER_AVATAR 
+                }).then(() => {
+                    if (auth) {
+                        let authUser = auth.currentUser
+                        dispacth(addUser({ email: authUser?.email, uid: authUser?.uid, diplayName: authUser?.displayName, photoURL: authUser?.photoURL }))
+                    }
+                    // ...
+                }).catch((error) => {
+                    setErrorMessage(error)
+                });
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -73,8 +76,6 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user)
-                // ...
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -92,6 +93,8 @@ const Login = () => {
             handleSignUp(values.email, values.password)
         }
     }
+
+
     return (
         <div className=''>
             <Header />
@@ -100,6 +103,7 @@ const Login = () => {
                 https://assets.nflxext.com/ffe/siteui/vlv3/dace47b4-a5cb-4368-80fe-c26f3e77d540/f5b52435-458f-498f-9d1d-ccd4f1af9913/IN-en-20231023-popsignuptwoweeks-perspective_alpha_website_large.jpg
                 " alt="logo" className='h-screen w-full' />
             </div>
+
             <div className='absolute bg-black p-12 w-3/4 h-2/3 md:w-3/12 my-auto top-0 bottom-0   mx-auto left-0 right-0 text-white rounded-md bg-opacity-80'>
 
                 <Formik
