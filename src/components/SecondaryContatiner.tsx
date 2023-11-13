@@ -1,9 +1,20 @@
-import React from 'react'
+import MovieList from './MovieList'
+import { useSelector } from 'react-redux'
+import { RootState } from '../utils/appStore'
 
 const SecondaryContatiner = () => {
+  const  movies= useSelector((store:RootState)=> store.movies)
+
+
   return (
-    <div>
-      
+    <div className='bg-black'>
+      <div className='-mt-60 z-30 relative'>
+
+      <MovieList title="Now Play Movie" movies ={movies.nowPlayingMovies} id='a' key={'a'}/>
+      <MovieList title="Popular Movie" movies ={movies.popularMovies} id='b' key={'b'}/>
+      <MovieList title="Top Ratd Movies" movies ={movies.topRatedMovies} id='topRatedMovies' key={'topRatedMovies'}/>
+      <MovieList title="Upcoming Movies" movies ={movies.upcomingMovies} id='upComingMovies' key={'upComingMovies'}/>
+      </div>
     </div>
   )
 }

@@ -12,7 +12,7 @@ const useNowNowPlay = () => {
       API_CONSTANT
     );
     let json = await data.json();
-    console.log(json.results);
+    // console.log(json.results);
     dispacth(addPlayingMovies(json.results));
   };
 

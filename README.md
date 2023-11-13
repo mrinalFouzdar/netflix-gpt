@@ -29,6 +29,7 @@
 - Update Store with Trailer Video
 - Embedded the Youtube video and make it auto play and mute 
 - Tailwind Classes use on Main Container
+- Infinite scroll x-axis-wise
 
 # Features
 
