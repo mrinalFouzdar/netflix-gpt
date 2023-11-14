@@ -17,7 +17,7 @@ const useUpcomingMovie = () => {
       API_CONSTANT
     );
     let json = await data.json();
-    console.log(json.results);
+    // console.log(json.results);
     setFetchedPages((prevPage) => [...prevPage, page]);
     dispacth(addUpcomingMovies(json.results));
   };

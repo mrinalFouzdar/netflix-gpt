@@ -13,3 +13,16 @@ export type FormValues = {
   confirmPassword?: string;
 };
 
+export type Option ={
+  value: string;
+  label: string;
+}
+
+ interface Language {
+  search: string;
+  gptSearchPlaceHolder: string;
+}
+
+export interface LanguageOptions {
+  [key: string]: Language;
+}

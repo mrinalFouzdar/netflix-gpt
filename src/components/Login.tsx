@@ -7,7 +7,7 @@ import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { FormValues } from '../utils/types';
-import {USER_AVATAR  } from '../utils/constants';
+import {BG_URL, USER_AVATAR  } from '../utils/constants';
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true)
@@ -85,7 +85,7 @@ const Login = () => {
             });
     }
     const hadleSubmit = (values: FormValues) => {
-        console.log(values)
+        // console.log(values)
 
         if (isSignInForm) {
             handleSignIn(values.email, values.password)
@@ -99,9 +99,7 @@ const Login = () => {
         <div className=''>
             <Header />
             <div className='absolute w-full h-screen'>
-                <img src="
-                https://assets.nflxext.com/ffe/siteui/vlv3/dace47b4-a5cb-4368-80fe-c26f3e77d540/f5b52435-458f-498f-9d1d-ccd4f1af9913/IN-en-20231023-popsignuptwoweeks-perspective_alpha_website_large.jpg
-                " alt="logo" className='h-screen w-full' />
+                <img src={BG_URL} alt="logo" className='h-screen w-full' />
             </div>
 
             <div className='absolute bg-black p-12 w-3/4 h-2/3 md:w-3/12 my-auto top-0 bottom-0   mx-auto left-0 right-0 text-white rounded-md bg-opacity-80'>

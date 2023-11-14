@@ -20,7 +20,7 @@ const usePopularMovies = () => {
         API_CONSTANT
       );
       let json = await data.json();
-      console.log(json.results, page);
+      // console.log(json.results, page);
       setFetchedPages((prevPages) => [...prevPages, page]);
 
       dispacth(addPopularMovies(json.results));

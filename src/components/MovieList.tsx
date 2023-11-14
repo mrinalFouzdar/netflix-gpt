@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import MovieCard from './MovieCard'
-import { number } from 'yup'
 import usePopularMovies from '../hooks/usePopularMovies'
 import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import useUpcomingMovie from '../hooks/useUpcomingMovie'
@@ -26,7 +25,7 @@ const MovieList = ({ title, movies, id }: MovieListType) => {
             // if (id === 'b') {
             //     handlePageNumber()
             // }
-            console.log(id)
+            // console.log(id)
 
             switch (id) {
                 case 'b':
@@ -40,7 +39,7 @@ const MovieList = ({ title, movies, id }: MovieListType) => {
                     break;
 
                 default:
-                    console.log('default');
+                    // console.log('default');
                     break;
             }
         }

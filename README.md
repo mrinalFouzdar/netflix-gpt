@@ -30,6 +30,13 @@
 - Embedded the Youtube video and make it auto play and mute 
 - Tailwind Classes use on Main Container
 - Infinite scroll x-axis-wise
+- Movie List
+- integrate TMDB api for fetching Movie data
+- Integrate TMDB Image CDN URL
+- GPT search Feature
+- Create GPT Slice
+- Multi-language Feature in Our App
+
 
 # Features
 
