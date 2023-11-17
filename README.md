@@ -1,7 +1,7 @@
 # Netflix Gpt
 
-- create react app
-- install Typescript and config
+- Create react app
+- Install Typescript and config
 - Gonfigured TailwindCSS
 - Header
 - Routing of App
@@ -21,7 +21,7 @@
 - Add haedcoded values to the constants file
 - Register TMDB API & create an app & get access token
 - Get Data from TMDB now playing movies list API
-- custom Hook for Now Playing Movies
+- Custom Hook for Now Playing Movies
 - Create movieSlice
 - Update Store with movies Data
 - Planning for MainContauiner & secondary container
@@ -31,7 +31,7 @@
 - Tailwind Classes use on Main Container
 - Infinite scroll x-axis-wise
 - Movie List
-- integrate TMDB api for fetching Movie data
+- Integrate TMDB api for fetching Movie data
 - Integrate TMDB Image CDN URL
 - GPT search Feature
 - Create GPT Slice
@@ -39,7 +39,8 @@
 - Integrate Open GPT api 
 - Get movie suggestion by Open GPT api 
 - Based on GPT result , Search Movies on TMDB
-
+- Reused Movie List component 
+- Make Responsive 
 
 # Features
 

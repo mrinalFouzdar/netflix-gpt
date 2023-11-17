@@ -64,7 +64,7 @@ const MovieList = ({ title, movies, id }: MovieListType) => {
 
     return (
         <>
-            <h1 className='text-2xl py-4 text-white'>{title}</h1>
+            <h1 className='text-lg md:text-2xl py-2 md:py-4 text-white'>{title}</h1>
             <div className='flex overflow-x-scroll gap-3' id={id}>
                 {/* <div className='flex gap-3'> */}
 

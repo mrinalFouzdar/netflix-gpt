@@ -8,7 +8,7 @@ const MovieCard = ({path}:{path:any}) => {
   return (
     <div>
 
-    <div className='w-44 '>
+    <div className='w-28 md:w-44 '>
       <img src={IMG_CDN_URL+path} alt="Movie" />
     </div>
     </div>
