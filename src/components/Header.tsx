@@ -55,13 +55,13 @@ const Header = () => {
 
   }
   return (
-    <div className='absolute w-screen px-4 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
-      <img src={LOGO} alt="logo" className='w-40' />
+    <div className='absolute w-screen px-2 md:px-4 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
+      <img src={LOGO} alt="logo" className='w-20 md:w-40' />
 
       {user && <div className='p-4 flex gap-3'>
         {gptSatus && <Select options={SUPPORTED_LANGUAGE} defaultValue={SUPPORTED_LANGUAGE[0]} onChange={handleSelect} className='px-2' />}
-        <button className='bg-violet-600 text-white px-4 rounded-lg' onClick={handleGptSearch}>{gptSatus ? "Home Page" : "GPT SEARCH"}</button>
-        <img src={(user as { photoURL: string }).photoURL} alt="str" className='w-10 h-10 rounded-full' />
+        <button className='bg-violet-600 text-white px-1 md:px-4 rounded-lg' onClick={handleGptSearch}>{gptSatus ? "Home Page" : "GPT SEARCH"}</button>
+        <img src={(user as { photoURL: string }).photoURL} alt="str" className='w-8 h-8 md:w-10 md:h-10 rounded-full' />
         <button onClick={handleSignOut} className='font-bold text-white'>Sign Out</button>
       </div>}
     </div>

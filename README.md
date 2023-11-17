@@ -36,6 +36,9 @@
 - GPT search Feature
 - Create GPT Slice
 - Multi-language Feature in Our App
+- Integrate Open GPT api 
+- Get movie suggestion by Open GPT api 
+- Based on GPT result , Search Movies on TMDB
 
 
 # Features

@@ -14,7 +14,7 @@ export const API_CONSTANT = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1Yjg0ZTZlZTU2ZmM0YzE5ZDkyMjFhZTk5YThmMDBmMiIsInN1YiI6IjYyMGZmM2Q1ZjkwYjE5MDA0NGU4YTMwMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.iG_1BhQq4HGoHODptJhjiwbhHuitIiLY7UEW_raeddc",
+      `Bearer ${process.env.REACT_APP_TMDB_API_KEY}`,
   },
 };
 
